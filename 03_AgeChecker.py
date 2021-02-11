@@ -29,3 +29,6 @@ def intcheck(question,low = None,high = None):
             print(error)
             print()
 
+age = intcheck("Age: ",12,130)
+
+
