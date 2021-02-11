@@ -29,18 +29,18 @@ def intcheck(question):
 # Main
 name = ""
 
-count = 0
+ticket_count = 0
 max_tickets = 5
 
-total_profit = 0
-while count < max_tickets:
+total_sale = 0
+while ticket_count < max_tickets:
 
-    if(max_tickets - count ) == 1:
+    if(max_tickets - ticket_count ) == 1:
         print("")
         print("!!! There is only 1 ticket left !!!")
         print("")
     else:
-        print("You have {} tickets left".format(max_tickets - count))
+        print("You have {} tickets left".format(max_tickets - ticket_count))
 
     name = input("Name:")
     if name == "xxx":
@@ -63,18 +63,18 @@ while count < max_tickets:
     else:
         price = 10.50
 
-    profit = price - 5
-    total_profit += profit
-    count += 1
+    total_sale += price
+    ticket_count += 1
 
     print("{}:${:.2f}".format(name,price))
 
 
-if count < max_tickets:
-    print("You have sold {}".format(count))
-    print("There are {} tickets left".format(max_tickets-count))
+if ticket_count < max_tickets:
+    print("You have sold {}".format(ticket_count))
+    print("There are {} tickets left".format(max_tickets-ticket_count))
 else:
     print("All tickets have been sold")
 
-print("You have made ${:.2f} profit".format(total_profit))
+profit = total_sale - (5*ticket_count)
+print("You have made ${:.2f} profit".format(profit))
 
