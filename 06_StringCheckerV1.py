@@ -1,7 +1,7 @@
 #Functions
 def yes_no(question,valid_answers):
 
-    error = "Please enter Yes or No"
+    error = "Sorry that is not a valid response"
 
     valid = False
     while not valid:
@@ -14,7 +14,7 @@ def yes_no(question,valid_answers):
                 if response == item[0]:
                     return item
 
-        print("please enter Yes or No")
+        print(error)
 
 
 for item in range(0,6):
