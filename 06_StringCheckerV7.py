@@ -1,6 +1,8 @@
+# Imports
 import re
 
 
+# Functions
 def string_checker(choice, options):
     for var_list in options:
 
@@ -17,37 +19,21 @@ def string_checker(choice, options):
         print("Error: Please enter a valid choice")
         return "invalid choice"
 
-number_regex = "^[1-9]"
 
-valid_snacks = [
+def get_snacks():
+    number_regex = "^[1-9]"
 
-    ["popcorn", "p", "corn", "a"],
-    ["M&M's", "m&m's", "mms", "m", "b"],
-    ["pita chips", "chips", "pc", "pita", "c"],
-    ["water", "w", "d"],
-    ["orange juice", "oj"]
+    valid_snacks = [
 
-]
+        ["popcorn", "p", "corn", "a"],
+        ["M&M's", "m&m's", "mms", "m", "b"],
+        ["pita chips", "chips", "pc", "pita", "c"],
+        ["water", "w", "d"],
+        ["orange juice", "oj"]
 
-yes_no_list = [
-        ["yes", "y"],
-        ["no", "n"]
     ]
 
-snack_ok = ""
-snack = ""
-
-chosen_snacks = []
-
-
-check_snack = "invalid choice"
-while check_snack == "invalid choice":
-    want_snack = input("Do you want to buy a snack")
-    check_snack = string_checker(want_snack, yes_no_list)
-
-
-
-if check_snack == "Yes":
+    chosen_snacks = []
 
     desired_snack = ""
     while desired_snack != "xxx":
@@ -55,7 +41,7 @@ if check_snack == "Yes":
         desired_snack = input("Snack: ").lower()
 
         if desired_snack == "xxx":
-            break
+            return chosen_snacks
 
         if re.match(number_regex, desired_snack):
             amount = int(desired_snack[0])
@@ -73,9 +59,7 @@ if check_snack == "Yes":
             snack_chosen = "invalid choice"
 
         if snack_chosen != "invalid choice":
-            print("Snack Chosen:{} {}".format(amount,snack_chosen))
-
-
+            print("Snack Chosen:{} {}".format(amount, snack_chosen))
 
         snack_row.append(amount)
         snack_row.append(snack_chosen)
@@ -83,13 +67,34 @@ if check_snack == "Yes":
         if snack_chosen != "xxx" and snack_chosen != "invalid choice":
             chosen_snacks.append(snack_row)
 
+
+
+
+# Main Routine
+yes_no_list = [
+        ["yes", "y"],
+        ["no", "n"]
+    ]
+
+
+check_snack = "invalid choice"
+while check_snack == "invalid choice":
+    want_snack = input("Do you want to buy a snack")
+    check_snack = string_checker(want_snack, yes_no_list)
+
+
+if check_snack == "Yes":
+    get_order = get_snacks()
+else:
+    get_order = []
+
 print()
-if len(chosen_snacks) == 0:
+if len(get_order) == 0:
     print("Snacks Ordered: None")
 else:
     print("Snacks Ordered: ")
 
-    for item in chosen_snacks:
+    for item in get_order:
         print(item)
 
 
