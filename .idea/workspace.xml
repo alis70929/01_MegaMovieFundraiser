@@ -45,16 +45,29 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="00_MegaMovieFundraiser_BaseV3.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="00_MegaMovieFundraiser_BaseV3.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/00_MegaMovieFundraiser_BaseV3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="824">
-              <caret line="118" column="50" selection-start-line="118" selection-start-column="50" selection-end-line="118" selection-end-column="50" />
+            <state relative-caret-position="-355">
+              <caret line="155" column="5" selection-start-line="155" selection-start-column="5" selection-end-line="155" selection-end-column="5" />
               <folding>
                 <element signature="e#85#257#0" expanded="false" />
                 <element signature="e#288#812#0" expanded="false" />
-                <element signature="e#1111#1524#0" expanded="false" />
+                <element signature="e#2711#3123#0" expanded="false" />
+                <element signature="e#1124#1461#0" expanded="false" />
+                <element signature="e#1486#2680#0" expanded="false" />
+                <element signature="e#2711#3123#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="08_SnackLists.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/08_SnackLists.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="342">
+              <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -84,9 +97,11 @@
       <file leaf-file-name="06_StringCheckerV7.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/06_StringCheckerV7.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="359">
-              <caret line="58" column="43" selection-start-line="58" selection-start-column="43" selection-end-line="58" selection-end-column="43" />
-              <folding />
+            <state relative-caret-position="206">
+              <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="76" selection-end-column="5" />
+              <folding>
+                <element signature="e#437#1636#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -135,10 +150,11 @@
         <option value="$PROJECT_DIR$/07_string_analyser.py" />
         <option value="$PROJECT_DIR$/06_StringCheckerV5.py" />
         <option value="$PROJECT_DIR$/06_StringCheckerV6.py" />
-        <option value="$PROJECT_DIR$/06_StringCheckerV7.py" />
         <option value="$PROJECT_DIR$/01_NameNotBlankV2.py" />
         <option value="$PROJECT_DIR$/00_MegaMovieFundraiser_Basev2.py" />
+        <option value="$PROJECT_DIR$/06_StringCheckerV7.py" />
         <option value="$PROJECT_DIR$/00_MegaMovieFundraiser_BaseV3.py" />
+        <option value="$PROJECT_DIR$/08_SnackLists.py" />
       </list>
     </option>
   </component>
@@ -204,24 +220,7 @@
       <recent name="C:\Users\alis70929\OneDrive - Massey High School\Old School Files\Documents\Com_201\01_Programming\01_MegaMovieFundraiser" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.00_MegaMovieFundraiser_BaseV3">
-    <configuration default="false" name="07_string_analyser" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="01_MegaMovieFundraiser" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/07_string_analyser.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python.08_SnackLists">
     <configuration default="false" name="06_StringCheckerV5" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -286,6 +285,23 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="01_MegaMovieFundraiser" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/00_MegaMovieFundraiser_BaseV3.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="08_SnackLists" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="01_MegaMovieFundraiser" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/08_SnackLists.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -425,19 +441,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.07_string_analyser" />
-      <item index="1" class="java.lang.String" itemvalue="Python.06_StringCheckerV5" />
-      <item index="2" class="java.lang.String" itemvalue="Python.06_StringCheckerV6" />
-      <item index="3" class="java.lang.String" itemvalue="Python.06_StringCheckerV7" />
-      <item index="4" class="java.lang.String" itemvalue="Python.00_MegaMovieFundraiser_BaseV3" />
+      <item index="0" class="java.lang.String" itemvalue="Python.06_StringCheckerV5" />
+      <item index="1" class="java.lang.String" itemvalue="Python.06_StringCheckerV6" />
+      <item index="2" class="java.lang.String" itemvalue="Python.06_StringCheckerV7" />
+      <item index="3" class="java.lang.String" itemvalue="Python.00_MegaMovieFundraiser_BaseV3" />
+      <item index="4" class="java.lang.String" itemvalue="Python.08_SnackLists" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.00_MegaMovieFundraiser_BaseV3" />
-        <item index="1" class="java.lang.String" itemvalue="Python.06_StringCheckerV7" />
-        <item index="2" class="java.lang.String" itemvalue="Python.06_StringCheckerV6" />
-        <item index="3" class="java.lang.String" itemvalue="Python.06_StringCheckerV5" />
-        <item index="4" class="java.lang.String" itemvalue="Python.07_string_analyser" />
+        <item index="0" class="java.lang.String" itemvalue="Python.08_SnackLists" />
+        <item index="1" class="java.lang.String" itemvalue="Python.00_MegaMovieFundraiser_BaseV3" />
+        <item index="2" class="java.lang.String" itemvalue="Python.06_StringCheckerV7" />
+        <item index="3" class="java.lang.String" itemvalue="Python.06_StringCheckerV6" />
+        <item index="4" class="java.lang.String" itemvalue="Python.06_StringCheckerV5" />
       </list>
     </recent_temporary>
   </component>
@@ -456,7 +472,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="974" height="1047" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3611691" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -495,16 +511,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/00_MegaMovieFundraiser_Base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1360">
-          <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
-          <folding>
-            <element signature="e#41#569#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/05_YesNoChecker.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -786,14 +792,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/07_string_analyser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="41" selection-start-line="15" selection-start-column="3" selection-end-line="23" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/06_StringCheckerV5.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -827,10 +825,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/06_StringCheckerV7.py">
+    <entry file="file://$PROJECT_DIR$/07_string_analyser.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="58" column="43" selection-start-line="58" selection-start-column="43" selection-end-line="58" selection-end-column="43" />
+        <state relative-caret-position="391">
+          <caret line="23" column="41" selection-start-line="15" selection-start-column="3" selection-end-line="23" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/01_NameNotBlankV2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -845,23 +851,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/01_NameNotBlankV2.py">
+    <entry file="file://$PROJECT_DIR$/06_StringCheckerV7.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="206">
+          <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="76" selection-end-column="5" />
+          <folding>
+            <element signature="e#437#1636#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/00_MegaMovieFundraiser_BaseV3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="824">
-          <caret line="118" column="50" selection-start-line="118" selection-start-column="50" selection-end-line="118" selection-end-column="50" />
+        <state relative-caret-position="-355">
+          <caret line="155" column="5" selection-start-line="155" selection-start-column="5" selection-end-line="155" selection-end-column="5" />
           <folding>
             <element signature="e#85#257#0" expanded="false" />
             <element signature="e#288#812#0" expanded="false" />
-            <element signature="e#1111#1524#0" expanded="false" />
+            <element signature="e#2711#3123#0" expanded="false" />
+            <element signature="e#1124#1461#0" expanded="false" />
+            <element signature="e#1486#2680#0" expanded="false" />
+            <element signature="e#2711#3123#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/08_SnackLists.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
