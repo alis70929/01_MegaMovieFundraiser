@@ -27,6 +27,8 @@ def intcheck(question):
 
 
 # Main
+
+
 name = ""
 
 ticket_count = 0
