@@ -149,6 +149,8 @@ orange_juice = []
 
 snack_lists = [popcorn, mms, pita_chips, water, orange_juice]
 
+surcharge_mult_list = []
+
 movie_data_dict = {
     'Name': all_names,
     'Ticket': all_tickets,
@@ -156,7 +158,18 @@ movie_data_dict = {
     'Water': water,
     'Pita Chips': pita_chips,
     'M&Ms': mms,
-    'Orange Juice': orange_juice
+    'Orange Juice': orange_juice,
+    'Surcharge Multiplier': surcharge_mult_list 
+
+}
+
+price_dict = {
+    'Popcorn': 2.5,
+    'Water': 2,
+    'Pita Chips': 4.5,
+    'M&Ms': 3,
+    'Orange Juice': 3.25
+
 
 }
 
@@ -201,24 +214,67 @@ while ticket_count < max_tickets:
         check_snack = string_checker(want_snack, yes_no_list)
 
     if check_snack == "Yes":
-        get_order = get_snacks()
+        snack_order = get_snacks()
     else:
-        get_order = []
+        snack_order = []
+    
+    for item in snack_lists:
+      item.append(0)
 
-    print()
-    if len(get_order) == 0:
-        print("Snacks Ordered: None")
-    else:
-        print("Snacks Ordered: ")
-
-        for item in get_order:
-            print(item)
+    # set up lists properly
+    for item in snack_order:
+        if len(item) > 0:
+            to_find = (item[1])
+            amount = (item[0])
+            add_list = movie_data_dict[to_find]
+            add_list[-1] = amount
+    
+   
 
     print("{}:${:.2f}".format(name,ticket_price))
 
+    how_pay = "invalid choice"
+    while how_pay == 'invalid choice':
+        how_pay = input("please choose a payment method (cash or credit)")
+        how_pay = string_checker(how_pay,pay_method)
+
+    if how_pay == "Credit":
+        surcharge_multiplier = 0.05 
+    else:
+        surcharge_multiplier = 0
+    surcharge_mult_list.append(surcharge_multiplier)
+
 
 movie_frame = pandas.DataFrame(movie_data_dict)
-print(movie_frame)
+movie_frame = movie_frame.set_index('Name')
+
+movie_frame['Sub Total'] = \
+    movie_frame["Ticket"] + \
+    movie_frame["Popcorn"] * price_dict['Popcorn'] + \
+    movie_frame["Water"] * price_dict['Water'] + \
+    movie_frame["Pita Chips"] * price_dict['Pita Chips'] + \
+    movie_frame["M&Ms"] * price_dict['M&Ms'] + \
+    movie_frame["Orange Juice"] * price_dict['Orange Juice']
+
+movie_frame["Surcharge"] = \
+  movie_frame["Sub Total"] * movie_frame["Surcharge Multiplier"]
+
+movie_frame["Total"] = \
+  movie_frame["Sub Total"] + movie_frame['Surcharge']
+movie_frame = movie_frame.rename(columns = {'Orange Juice': 'OJ', 'Pita Chips': 'Chips','Surcharge Multiplier':"SM"})
+
+pandas.set_option('display.max_columns', None)
+
+extendedframe_YN = "invalid choice"
+while extendedframe_YN == "invalid choice":
+    want_extendedframe = input("Do you want to show full transaction")
+    extendedframe_YN = string_checker(want_extendedframe, yes_no_list)
+
+if extendedframe_YN == "Yes": 
+  print(movie_frame)
+else:
+  print(movie_frame[['Ticket','Sub Total','Surcharge', 'Total']])
+
 
 profit = total_sale - (5*ticket_count)
 print("You have made ${:.2f} profit".format(profit))
