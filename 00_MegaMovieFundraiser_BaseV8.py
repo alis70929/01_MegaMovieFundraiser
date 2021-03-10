@@ -125,7 +125,8 @@ def get_ticket_price():
 
     return price
 
-
+def currency(x):
+  return '${:.2f}'.format(x)
 # Main
 name = ""
 ticket_count = 0
@@ -253,19 +254,30 @@ for item in snack_lists:
 
 snack_total = movie_frame['Snacks'].sum()
 snack_profit = snack_total * 0.2
-summary_data.append(snack_profit)
 
 ticket_profit = total_sale - (5 * ticket_count)
-summary_data.append(ticket_profit)
 
 total_profit = snack_profit + ticket_profit
-summary_data.append(total_profit)
+
+dollar_amounts = [snack_profit,ticket_profit,total_profit]
+for item in dollar_amounts:
+  item = currency(item)
+  summary_data.append(item)
+
 
 summary_frame = pandas.DataFrame(summary_data_dict)
 summary_frame = summary_frame.set_index('Item')
 
 pandas.set_option('display.max_columns', None)
-pandas.set_option('precision',2)
+
+
+add_dollars = ['Ticket', 'Snacks', 'Surcharge', 'Total', 'Sub Total']
+
+for item in add_dollars:
+  movie_frame[item] = movie_frame[item].apply(currency)
+
+movie_frame.to_csv("ticket_details.csv")
+summary_frame.to_csv('snack_summary.csv')
 
 print()
 print("*** Ticket/Snack Info ***")
