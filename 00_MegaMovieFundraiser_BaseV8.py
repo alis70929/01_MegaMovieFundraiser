@@ -125,12 +125,15 @@ def get_ticket_price():
 
     return price
 
+
 def currency(x):
-  return '${:.2f}'.format(x)
+    return '${:.2f}'.format(x)
+
+
 # Main
 name = ""
 ticket_count = 0
-max_tickets = 5
+max_tickets = 150
 
 all_names = []
 all_tickets = []
@@ -212,8 +215,6 @@ while ticket_count < max_tickets:
             add_list = movie_data_dict[to_find]
             add_list[-1] = amount
 
-    print("{}:${:.2f}".format(name, ticket_price))
-
     how_pay = "invalid choice"
     while how_pay == 'invalid choice':
         how_pay = input("please choose a payment method (cash or credit)")
@@ -259,22 +260,20 @@ ticket_profit = total_sale - (5 * ticket_count)
 
 total_profit = snack_profit + ticket_profit
 
-dollar_amounts = [snack_profit,ticket_profit,total_profit]
+dollar_amounts = [snack_profit, ticket_profit, total_profit]
 for item in dollar_amounts:
-  item = currency(item)
-  summary_data.append(item)
-
+    item = currency(item)
+    summary_data.append(item)
 
 summary_frame = pandas.DataFrame(summary_data_dict)
 summary_frame = summary_frame.set_index('Item')
 
 pandas.set_option('display.max_columns', None)
 
-
 add_dollars = ['Ticket', 'Snacks', 'Surcharge', 'Total', 'Sub Total']
 
 for item in add_dollars:
-  movie_frame[item] = movie_frame[item].apply(currency)
+    movie_frame[item] = movie_frame[item].apply(currency)
 
 movie_frame.to_csv("ticket_details.csv")
 summary_frame.to_csv('snack_summary.csv')
