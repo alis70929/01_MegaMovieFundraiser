@@ -3,6 +3,8 @@ import re, pandas
 
 
 # Functions
+
+# checks if string is not blank
 def not_blank(question, error_message):
     valid = False
 
@@ -14,6 +16,7 @@ def not_blank(question, error_message):
             print(error_message)
 
 
+# checks if value is an integer
 def intcheck(question):
     valid = False
     # Error message
@@ -36,7 +39,7 @@ def intcheck(question):
             print(error)
             print()
 
-
+# checks who many tickets are left
 def check_tickets(tickets_sold, ticket_limit):
     if (ticket_limit - tickets_sold) == 1:
         print("")
@@ -45,7 +48,7 @@ def check_tickets(tickets_sold, ticket_limit):
     else:
         print("You have {} tickets left".format(ticket_limit - tickets_sold))
 
-
+# compares given string to valid options, Returns items in Title case
 def string_checker(choice, options):
     for var_list in options:
 
@@ -62,7 +65,7 @@ def string_checker(choice, options):
         print("Error: Please enter a valid choice")
         return "invalid choice"
 
-
+# Snacks Component, asks user for snacks and amount
 def get_snacks():
     number_regex = "^[1-9]"
 
@@ -105,7 +108,7 @@ def get_snacks():
         if snack_chosen != "xxx" and snack_chosen != "invalid choice":
             chosen_snacks.append(snack_row)
 
-
+# get age of customer and check the ticket price
 def get_ticket_price():
     age = intcheck("Age: ")
     # Check if age is within range
@@ -125,16 +128,19 @@ def get_ticket_price():
 
     return price
 
-
+# currency formatting 
 def currency(x):
     return '${:.2f}'.format(x)
 
 
 # Main
-name = ""
-ticket_count = 0
-max_tickets = 150
 
+# initialize loop values
+name = ""
+ticket_count = 0 
+max_tickets = 150  # set maximum tickets 
+
+# initialize lists for movie data dictionary
 all_names = []
 all_tickets = []
 
@@ -148,6 +154,7 @@ snack_lists = [popcorn, mms, pita_chips, water, orange_juice]
 
 surcharge_mult_list = []
 
+# set headings for summary data
 summary_headings = [
     'Popcorn', 'M&Ms', 'Pita Chips', 'Water', 'Orange Juice', 'Snack Profit',
     'Ticket Profit', 'Total Profit'
@@ -180,32 +187,43 @@ yes_no_list = [["yes", "y"], ["no", "n"]]
 
 pay_method = [['cash', 'ca'], ['credit', 'cr']]
 
+# counts how much money is made from tickets
 total_sale = 0
+
+#loop till all tickets are sold or exit code is entered
 while ticket_count < max_tickets:
 
+    # says how many tickets are left, special message if only one is left
     check_tickets(ticket_count, max_tickets)
 
+    # ask user for name and checks that the name is not blank
     name = not_blank(
         "Name: ", "sorry - This cannot be left blank, "
         "Please enter a name")
 
+    # exit code is entered break out of loop
     if name == "xxx":
         break
 
+    # ask/check users age, if below 12 years old or above 130 go back to beginning of loop
     ticket_price = get_ticket_price()
     if ticket_price == "invalid ticket price":
         continue
 
+    # add this tickets price to the total sale
     total_sale += ticket_price
+    # add 1 to how many tickets have been sold
     ticket_count += 1
 
+    # add the users name and ticket price in the corresponding list for later proccessing
     all_names.append(name)
     all_tickets.append(ticket_price)
 
+    # get how many snacks the user wants
     snack_order = get_snacks()
 
-    for item in snack_lists:
-        item.append(0)
+    #for item in snack_lists:
+        #item.append(0)
 
     # set up lists properly
     for item in snack_order:
