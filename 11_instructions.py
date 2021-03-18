@@ -23,7 +23,14 @@ def instructions(options):
     show_help = string_checker(show_help,options)
 
     if show_help == "Yes":
-      print("Instructions")
+      print("****** Instructions ******* ")
+      print("To use this program you must - ")
+      print(" - put in a customers name")
+      print(" - put in a customers age")
+      print(" - while entering snacks type in xxx or n to finish inputting snacks ")
+      print(" - put number of snacks wanted infront of of that snack \n E.g 2 pita chips")
+      print(" - then enter whether the user is paying with cash or credit")
+      print()
       input("press enter to continue")
 
   

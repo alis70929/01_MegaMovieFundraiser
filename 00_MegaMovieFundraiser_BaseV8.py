@@ -1,8 +1,8 @@
 # Imports
 import re, pandas
 
-
 # Functions
+
 
 # checks if string is not blank
 def not_blank(question, error_message):
@@ -39,8 +39,10 @@ def intcheck(question):
             print(error)
             print()
 
+
 # checks who many tickets are left
 def check_tickets(tickets_sold, ticket_limit):
+    # special message if only one ticket is left
     if (ticket_limit - tickets_sold) == 1:
         print("")
         print("!!! There is only 1 ticket left !!!")
@@ -48,8 +50,11 @@ def check_tickets(tickets_sold, ticket_limit):
     else:
         print("You have {} tickets left".format(ticket_limit - tickets_sold))
 
+
 # compares given string to valid options, Returns items in Title case
 def string_checker(choice, options):
+
+    # checks if the choice is in one of the options lists, returns the first item in that list in title case
     for var_list in options:
 
         if choice.lower() in var_list:
@@ -58,47 +63,65 @@ def string_checker(choice, options):
             break
         else:
             is_valid = "no"
-
+    # if choice was valid return item form above or tell users invalid choice
     if is_valid == "yes":
         return chosen
     else:
         print("Error: Please enter a valid choice")
         return "invalid choice"
 
+
 # Snacks Component, asks user for snacks and amount
 def get_snacks():
+
+    # regular expression for finding numbers 1-9 inclusive
     number_regex = "^[1-9]"
 
+    # list of valid snacks
     valid_snacks = [["popcorn", "p", "corn", "a"],
                     ["M&Ms", "m&ms", "mms", "m", "b"],
                     ["pita chips", "chips", "pc", "pita", "c"],
                     ["water", "w", "d"], ["orange juice", "oj", "e"]]
 
+    # initialize chosen snack master list
     chosen_snacks = []
 
+    # setup loop variable
     desired_snack = ""
+    # loop til user enters exit code or n
     while desired_snack != "xxx" or desired_snack != "n":
+
+        # initialize list for one type of snack
         snack_row = []
+        # ask user for their choice of snack
         desired_snack = input("Snack: ").lower()
 
+        # if exit code is entered break out of loop
         if desired_snack == "xxx" or desired_snack == "n":
             return chosen_snacks
 
+        # if the users choice has a number at the front
         if re.match(number_regex, desired_snack):
-            amount = int(desired_snack[0])
-            desired_snack = desired_snack[1:]
 
+            #seperate that number form the rest of the string and put them in variables
+            amount = int(desired_snack[0])  # number
+            desired_snack = desired_snack[1:]  # rest of string
+
+        # if no number at front assume the user wants one
         else:
             amount = 1
 
+        # strip blank spaces
         desired_snack = desired_snack.strip()
 
+        # check if the chsoen snack is a valid snack from the list of valid snacks
         snack_chosen = string_checker(desired_snack, valid_snacks)
 
+        # limit users to only be able to order 4 of a snack
         if amount >= 5:
             print("Sorry we have a four snack maximum")
             snack_chosen = "invalid choice"
-
+        # if chosen thing
         if snack_chosen != "invalid choice":
             print("Snack Chosen:{} {}".format(amount, snack_chosen))
 
@@ -107,6 +130,7 @@ def get_snacks():
 
         if snack_chosen != "xxx" and snack_chosen != "invalid choice":
             chosen_snacks.append(snack_row)
+
 
 # get age of customer and check the ticket price
 def get_ticket_price():
@@ -119,6 +143,7 @@ def get_ticket_price():
         print("Error: The age entered is too high")
         return "invalid ticket price"
 
+    # set ticket price according to age
     if age < 16:
         price = 7.50
     elif age > 64:
@@ -128,7 +153,8 @@ def get_ticket_price():
 
     return price
 
-# currency formatting 
+
+# currency formatting
 def currency(x):
     return '${:.2f}'.format(x)
 
@@ -137,8 +163,8 @@ def currency(x):
 
 # initialize loop values
 name = ""
-ticket_count = 0 
-max_tickets = 150  # set maximum tickets 
+ticket_count = 0
+max_tickets = 150  # set maximum tickets
 
 # initialize lists for movie data dictionary
 all_names = []
@@ -159,8 +185,10 @@ summary_headings = [
     'Popcorn', 'M&Ms', 'Pita Chips', 'Water', 'Orange Juice', 'Snack Profit',
     'Ticket Profit', 'Total Profit'
 ]
-
+# setup list for summary data
 summary_data = []
+
+# set up dictionaries
 movie_data_dict = {
     'Name': all_names,
     'Ticket': all_tickets,
@@ -231,10 +259,12 @@ while ticket_count < max_tickets:
 
         if len(item) > 0:
 
-            to_find = (item[1]) # gets the name of the snack
-            amount = (item[0]) # gets the amount of the snack 
-            add_list = movie_data_dict[to_find] # finds the list corresponding to the snack threough the dictionary
-            add_list[-1] = amount # replaces the placeholder at the end of the list with the amount of the snack
+            to_find = (item[1])  # gets the name of the snack
+            amount = (item[0])  # gets the amount of the snack
+            add_list = movie_data_dict[
+                to_find]  # finds the list corresponding to the snack threough the dictionary
+            add_list[
+                -1] = amount  # replaces the placeholder at the end of the list with the amount of the snack
 
     # loop asking how the user wants to pay (cash or credit)
     how_pay = "invalid choice"
