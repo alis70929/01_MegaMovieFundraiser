@@ -19,7 +19,7 @@ def instructions(options):
 
   show_help = 'invalid choice'
   while show_help == 'invalid choice':
-    show_help = input("Do you want to read the instructions")
+    show_help = input("Do you want to read the instructions: ")
     show_help = string_checker(show_help,options)
 
     if show_help == "Yes":
@@ -30,6 +30,7 @@ def instructions(options):
       print(" - while entering snacks type in xxx or n to finish inputting snacks ")
       print(" - put number of snacks wanted infront of of that snack \n E.g 2 pita chips")
       print(" - then enter whether the user is paying with cash or credit")
+      print(" when finished inputting customers type in xxx to finish \n the program will show you a short summary and put all inputted customer data in a .csv file")
       print()
       input("press enter to continue")
 
