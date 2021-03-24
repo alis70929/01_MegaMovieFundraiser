@@ -9,11 +9,14 @@ def not_blank(question, error_message):
     valid = False
 
     while not valid:
+        
         response = input(question)
         if response != "":
             return response
         else:
+            print()
             print(error_message)
+            print()
 
 
 # checks if value is an integer
@@ -36,6 +39,7 @@ def intcheck(question):
 
         # If input is not a number or is a decimal then display error
         except ValueError:
+            print()
             print(error)
             print()
 
@@ -67,7 +71,9 @@ def string_checker(choice, options):
     if is_valid == "yes":
         return chosen
     else:
+        print()
         print("Error: Please enter a valid choice")
+        print()
         return "invalid choice"
 
 
@@ -95,6 +101,7 @@ def get_snacks():
         snack_row = []
         # ask user for their choice of snack
         desired_snack = input("Snack: ").lower()
+        
 
         # if exit code is entered break out of loop
         if desired_snack == "xxx" or desired_snack == "n":
@@ -116,14 +123,20 @@ def get_snacks():
 
         # check if the chsoen snack is a valid snack from the list of valid snacks
         snack_chosen = string_checker(desired_snack, valid_snacks)
+        
 
         # limit users to only be able to order 4 of a snack
-        if amount >= 5:
+        if amount >= 5 and snack_chosen != "invalid choice":
+            print()
             print("Sorry we have a four snack maximum")
+            print()
             snack_chosen = "invalid choice"
+
         # if chosen thing
         if snack_chosen != "invalid choice":
+            print()
             print("Snack Chosen:{} {}".format(amount, snack_chosen))
+            print()
 
         snack_row.append(amount)
         snack_row.append(snack_chosen)
@@ -137,10 +150,14 @@ def get_ticket_price():
     age = intcheck("Age: ")
     # Check if age is within range
     if age < 12:
+        print()
         print("Error: You are too young to see this movie")
+        print()
         return "invalid ticket price"
     elif age > 130:
+        print()
         print("Error: The age entered is too high")
+        print()
         return "invalid ticket price"
 
     # set ticket price according to age
@@ -158,25 +175,33 @@ def get_ticket_price():
 def currency(x):
     return '${:.2f}'.format(x)
 
+
 def instructions(options):
 
+    show_help = 'invalid choice'
+    while show_help == 'invalid choice':
+        show_help = input("Do you want to read the instructions: ")
+        show_help = string_checker(show_help, options)
 
-  show_help = 'invalid choice'
-  while show_help == 'invalid choice':
-    show_help = input("Do you want to read the instructions: ")
-    show_help = string_checker(show_help,options)
+        if show_help == "Yes":
+            print("****** Instructions ******* ")
+            print("To use this program you must - ")
+            print(" - put in a customers name")
+            print(" - put in a customers age")
+            print(
+                " - while entering snacks type in xxx or n to finish inputting snacks "
+            )
+            print(
+                " - put number of snacks wanted infront of of that snack \n E.g 2 pita chips"
+            )
+            print(
+                " - then enter whether the user is paying with cash or credit")
+            print(
+                " when finished inputting customers type in xxx to finish \n the program will show you a short summary and put all inputted customer data in a .csv file"
+            )
+            print()
+            input("press enter to continue")
 
-    if show_help == "Yes":
-      print("****** Instructions ******* ")
-      print("To use this program you must - ")
-      print(" - put in a customers name")
-      print(" - put in a customers age")
-      print(" - while entering snacks type in xxx or n to finish inputting snacks ")
-      print(" - put number of snacks wanted infront of of that snack \n E.g 2 pita chips")
-      print(" - then enter whether the user is paying with cash or credit")
-      print(" when finished inputting customers type in xxx to finish \n the program will show you a short summary and put all inputted customer data in a .csv file")
-      print()
-      input("press enter to continue")
 
 # Main
 
@@ -243,6 +268,7 @@ total_sale = 0
 #loop till all tickets are sold or exit code is entered
 while ticket_count < max_tickets:
 
+    print()
     # says how many tickets are left, special message if only one is left
     check_tickets(ticket_count, max_tickets)
 
@@ -250,6 +276,7 @@ while ticket_count < max_tickets:
     name = not_blank(
         "Name: ", "sorry - This cannot be left blank, "
         "Please enter a name")
+    
 
     # exit code is entered break out of loop
     if name == "xxx":
@@ -257,6 +284,8 @@ while ticket_count < max_tickets:
 
     # ask/check users age, if below 12 years old or above 130 go back to beginning of loop
     ticket_price = get_ticket_price()
+    
+
     if ticket_price == "invalid ticket price":
         continue
 
@@ -293,6 +322,7 @@ while ticket_count < max_tickets:
     while how_pay == 'invalid choice':
         how_pay = input("please choose a payment method (cash or credit)")
         how_pay = string_checker(how_pay, pay_method)
+        
 
     # depending on abovea answer set the proper surcharge multiplier
     if how_pay == "Credit":
@@ -388,7 +418,7 @@ print(summary_frame)
 
 # say how many tickets are left
 if ticket_count < max_tickets:
-    print("You have sold {}".format(ticket_count))
+    print("You have sold {} Tickets".format(ticket_count))
     print("There are {} tickets left".format(max_tickets - ticket_count))
 else:
     print("All tickets have been sold")
