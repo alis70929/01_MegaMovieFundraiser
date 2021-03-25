@@ -208,7 +208,7 @@ def instructions(options):
 # initialize loop values
 name = ""
 ticket_count = 0
-max_tickets = 150  # set maximum tickets
+max_tickets = 20  # set maximum tickets
 
 # initialize lists for movie data dictionary
 all_names = []
