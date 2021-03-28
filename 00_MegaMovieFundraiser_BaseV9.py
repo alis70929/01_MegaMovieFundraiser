@@ -148,7 +148,7 @@ def get_snacks():
 # get age of customer and check the ticket price
 def get_ticket_price():
     age = intcheck("Age: ")
-    # Check if age is within range
+    # Check if age is within valid range
     if age < 12:
         print()
         print("Error: You are too young to see this movie")
